@@ -25,7 +25,7 @@ export function SceneCategory() {
       mm.add(
         { desktop: "(min-width: 768px)", mobile: "(max-width: 767px)" },
         (context) => {
-          const isMobile = !!context.conditions?.mobile;
+          const isMobile = !!context.conditions?.['mobile'];
           const spread = isMobile ? 120 : 240;
 
           const tl = gsap.timeline({
