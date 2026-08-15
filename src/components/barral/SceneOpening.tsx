@@ -24,8 +24,8 @@ export function SceneOpening() {
       <div className="pointer-events-none absolute inset-0 spotlight" aria-hidden />
 
       <motion.div
-        initial={reduced ? undefined : { opacity: 0, scale: 1.08 }}
-        animate={reduced ? undefined : { opacity: 1, scale: 1 }}
+        initial={reduced ? false : { opacity: 0, scale: 1.08 }}
+        animate={reduced ? {} : { opacity: 1, scale: 1 }}
         transition={{ duration: 2.2, ease }}
         className="pointer-events-none absolute inset-y-0 right-0 flex w-full items-end justify-center md:w-[58%] md:justify-end"
         aria-hidden
@@ -65,8 +65,8 @@ export function SceneOpening() {
         </div>
 
         <motion.div
-          initial={reduced ? undefined : { opacity: 0, y: 20 }}
-          animate={reduced ? undefined : { opacity: 1, y: 0 }}
+          initial={reduced ? false : { opacity: 0, y: 20 }}
+          animate={reduced ? {} : { opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.8, ease }}
           className="mt-9 flex flex-wrap items-center gap-3"
         >
