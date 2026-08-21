@@ -106,9 +106,10 @@ export function SceneManifesto() {
             whileInView={reduced ? {} : { opacity: 1, scale: 1 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 1.4, ease }}
-            className="relative self-start"
+            className="relative self-start md:sticky md:top-28"
           >
-            <div className="relative aspect-[3/4] overflow-hidden border border-hairline">
+            <div className="relative aspect-[4/5] overflow-hidden border border-hairline">
+
               <img
                 src={media.mrBarralShrug}
                 alt="Mr. Barral, the masked figurehead of Barral, arms open"
