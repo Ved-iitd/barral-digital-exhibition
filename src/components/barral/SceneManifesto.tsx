@@ -49,21 +49,24 @@ export function SceneManifesto() {
       <div className="relative mx-auto w-full max-w-[1600px] px-5 md:px-10">
         <p className="eyebrow text-barral">06 — The Story</p>
 
-        <div className="mt-8 grid gap-12 md:grid-cols-[1.15fr_0.85fr] md:gap-16">
-          <div>
-            <h2 id="manifesto-heading" className="display-xl text-bone">
+        <div className="mt-8 grid items-start gap-12 md:grid-cols-2 md:gap-16">
+          <div className="min-w-0">
+            <h2
+              id="manifesto-heading"
+              className="font-display font-medium leading-[0.95] tracking-[-0.02em] text-bone"
+              style={{ fontSize: "clamp(2.2rem, 4.6vw, 4rem)" }}
+            >
               {lines.map((line, i) => (
-                <span key={line} className="block overflow-hidden">
-                  <motion.span
-                    initial={reduced ? false : { y: "110%" }}
-                    whileInView={reduced ? {} : { y: "0%" }}
-                    viewport={{ once: true, amount: 0.5 }}
-                    transition={{ duration: 0.9, delay: i * 0.1, ease }}
-                    className={`block ${i === 2 ? "text-barral" : ""}`}
-                  >
-                    {line}
-                  </motion.span>
-                </span>
+                <motion.span
+                  key={line}
+                  initial={reduced ? false : { opacity: 0, y: 26 }}
+                  whileInView={reduced ? {} : { opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.8, delay: i * 0.1, ease }}
+                  className={`block ${i === 2 ? "text-barral" : ""}`}
+                >
+                  {line}
+                </motion.span>
               ))}
             </h2>
 
@@ -73,20 +76,20 @@ export function SceneManifesto() {
               category of their own.
             </p>
 
-            <ol className="mt-12 hairline-t">
+            <ol className="mt-10 hairline-t">
               {chapters.map((c, i) => (
                 <motion.li
                   key={c.no}
                   initial={reduced ? false : { opacity: 0, y: 24 }}
                   whileInView={reduced ? {} : { opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.4 }}
+                  viewport={{ once: true, amount: 0.3 }}
                   transition={{ duration: 0.7, delay: i * 0.08, ease }}
-                  className="grid grid-cols-[auto_minmax(0,1fr)] gap-5 hairline-b py-7 md:gap-10"
+                  className="grid grid-cols-[2.5rem_minmax(0,1fr)] gap-5 hairline-b py-7 md:grid-cols-[4rem_minmax(0,1fr)] md:gap-8"
                 >
                   <span className="font-display text-3xl leading-none text-bone/25 md:text-5xl">
                     {c.no}
                   </span>
-                  <div>
+                  <div className="min-w-0">
                     <h3 className="eyebrow text-bone">{c.title}</h3>
                     <p className="mt-3 max-w-[54ch] text-sm leading-relaxed text-bone/60">
                       {c.body}
@@ -96,6 +99,7 @@ export function SceneManifesto() {
               ))}
             </ol>
           </div>
+
 
           <motion.figure
             initial={reduced ? false : { opacity: 0, scale: 1.04 }}
